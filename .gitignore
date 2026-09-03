@@ -1,0 +1,35 @@
+# 依赖目录
+node_modules/
+.pnpm-store/
+
+# 构建产物
+dist/
+dist-ssr/
+*.local
+
+# 日志
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器/IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.history/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# TypeScript
+*.tsbuildinfo

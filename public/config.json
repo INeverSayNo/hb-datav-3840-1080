@@ -1,0 +1,43 @@
+{
+  "env": "development",
+  "gateway_url": {
+    "development": "https://zhwl.whisc.cn:60240",
+    "production": "https://zhwl.whisc.cn:60240",
+    "test": "https://zhwl.whisc.cn:60240"
+  },
+  "login_url": {
+    "development": "https://gateway.dczhiyun.com",
+    "production": "https://gateway.dczhiyun.com",
+    "test": "https://gateway.dczhiyun.com"
+  },
+  "file_url": {
+    "development": ""
+  },
+  "getfile_url": {
+    "development": ""
+  },
+  "jssdk_url": {
+    "development": ""
+  },
+  "ai_solution_url": {
+    "development": "https://zhwl.whisc.cn:60241/mobile/ai-solution",
+    "production": "https://zhwl.whisc.cn:60241/mobile/ai-solution",
+    "test": "https://zhwl.whisc.cn:60241/mobile/ai-solution"
+  },
+  "lbs_url": {
+    "development": "https://lbs.daochen.com",
+    "production": "https://lbs.daochen.com",
+    "test": "https://lbs.daochen.com"
+  },
+  "request": {
+    "timeout": 90000,
+    "isJwt": false,
+    "tokenStorage": "localStorage",
+    "tokenKey": "JsTokenNone",
+    "tokenPrefix": "bearer ",
+    "crypto": false,
+    "cryptoType": "Ecdh",
+    "userName":"13667184155",
+    "password":"13667184155279"
+  }
+}
