@@ -92,7 +92,7 @@ const LegendPanel = styled.section`
   gap: 28px;
   max-width: 4200px;
   pointer-events: none;
-  left: 100px;
+  left: 160px;
   top: 1550px;
   display: flex;
   align-items: center;
