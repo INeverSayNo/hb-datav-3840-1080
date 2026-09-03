@@ -5,7 +5,7 @@ import { resolve } from "node:path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/hb-datav/",
+  base: "/hb-datav-3840-1080/",
   // 预计算的路网二进制（scripts/precompute-hb-map.mjs 产出）不在 Vite 默认的
   // 资源后缀表里，显式登记后才能被 `?url` 导入并带上内容哈希。
   assetsInclude: ["**/*.bin"],

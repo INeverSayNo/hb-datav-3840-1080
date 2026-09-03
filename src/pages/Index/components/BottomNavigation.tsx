@@ -6,7 +6,7 @@ import rightButton from "@/assets/network-button-bg.webp";
 
 const Navigation = styled.nav`
   position: absolute;
-  left: 50%;
+  left: 49%;
   bottom: 0px;
   z-index: 6;
   width: 1650px;

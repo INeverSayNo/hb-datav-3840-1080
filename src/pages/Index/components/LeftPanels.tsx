@@ -31,7 +31,7 @@ import { createPortal } from "react-dom";
 const LeftRail = styled.aside`
   position: absolute;
   left: 70px;
-  top: 300px;
+  top: 282px;
   width: 1460px;
   height: 1880px;
   z-index: 2;

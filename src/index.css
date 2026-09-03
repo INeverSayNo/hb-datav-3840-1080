@@ -1,13 +1,13 @@
 @font-face {
   font-family: "pmzd";
-  src: url("/hb-datav/font/pmzd.woff2") format("woff2");
+  src: url("/hb-datav-3840-1080/font/pmzd.woff2") format("woff2");
   font-display: swap;
 }
 
 
 @font-face {
     font-family: 'YouSheBiaoTiHei';
-    src: url(/hb-datav/font/YouSheBiaoTiHei.woff2) format("woff2"),url(/hb-datav/font/YouSheBiaoTiHei.ttf) format("truetype");
+    src: url(/hb-datav-3840-1080/font/YouSheBiaoTiHei.woff2) format("woff2"),url(/hb-datav-3840-1080/font/YouSheBiaoTiHei.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap
