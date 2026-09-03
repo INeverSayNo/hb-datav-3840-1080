@@ -238,8 +238,8 @@ export default function CenterControls() {
         <Modal
           open
           onClose={() => setAiModalOpen(false)}
-          width="68vw"
-          height="80vh"
+          width="56vw"
+          height="90vh"
         >
           <iframe
             src={aiSolutionIframeUrl}
