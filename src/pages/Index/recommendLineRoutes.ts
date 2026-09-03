@@ -249,7 +249,7 @@ export const mapRelation = [
       "jiangxi",
     ],
     camera: {
-      position: [0, 30, 18],
+      position: [0, 30, 12],
       fov: 28,
       target: [0, 0, 0],
       minDistance: 12,

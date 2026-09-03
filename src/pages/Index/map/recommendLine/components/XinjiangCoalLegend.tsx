@@ -4,8 +4,8 @@ import hbMainPorts from "@/assets/hb-main-port.json";
 
 const HbPointLegendPanel = styled.div`
   position: absolute;
-  left: 100px;
-  bottom: -306px;
+  bottom: 0px;
+  left: 300px;
   z-index: 3;
   display: flex;
   align-items: stretch;
