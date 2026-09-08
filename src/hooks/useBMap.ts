@@ -33,6 +33,7 @@ export class BmapController {
         this.isLoad = true;
         resolve();
       };
+      //@ts-ignore
       window[callbackName] = handleReady;
 
       const existingScript = document.getElementById(
