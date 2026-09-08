@@ -31,8 +31,8 @@ import { createPortal } from "react-dom";
 const LeftRail = styled.aside`
   position: absolute;
   left: 70px;
-  top: 282px;
-  width: 1460px;
+  top: 260px;
+  width: 1900px;
   height: 1880px;
   z-index: 2;
 `;
@@ -49,20 +49,20 @@ const OverviewPanel = styled(Panel)`
 `;
 
 const FreightPanel = styled(Panel)`
-  top: 568px;
+  top: 500px;
   height: 820px;
 `;
 
 const SummaryPanel = styled(Panel)`
-  top: 1520px;
+  top: 1410px;
   height: 540px;
 `;
 
 const OverviewList = styled.div`
   position: absolute;
-  left: 80px;
-  right: 35px;
-  top: 180px;
+  top: 130px;
+  left: 190px;
+  right: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
@@ -109,7 +109,7 @@ const MetricLabel = styled.div`
 
 const SummaryStats = styled.div`
   position: absolute;
-  top: 130px;
+  top: 100px;
   left: 76px;
   display: grid;
   grid-template-columns: 570px 570px;
@@ -174,7 +174,7 @@ const ChartHeader = styled.div`
   position: absolute;
   left: 72px;
   right: 90px;
-  top: 370px;
+  top: 320px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -217,16 +217,16 @@ const Legend = styled.div`
 
 const ChartBox = styled.div`
   position: absolute;
-  left: 16px;
   right: 86px;
-  top: 460px;
+  top: 410px;
+  left: 60px;
   height: 400px;
 `;
 
 const Tabs = styled.div`
   position: absolute;
-  left: 88px;
-  top: 112px;
+  left: 160px;
+  top: 140px;
   display: flex;
   gap: 84px;
 `;
@@ -267,9 +267,9 @@ const OverviewTabImg = styled.img`
 
 const YearGrid = styled.div`
   position: absolute;
-  left: 126px;
+  left: 160px;
   right: 78px;
-  top: 210px;
+  top: 250px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 98px;

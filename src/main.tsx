@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { HashRouter } from "react-router";
-
 import { loadRuntimeConfig } from "@/axios-config/request";
 import "./index.css";
+import { BmapController } from "./hooks/useBMap.ts";
 
 const rootElement = document.getElementById("root");
 
@@ -61,15 +61,33 @@ function ConfigErrorScreen({ error }: { error: unknown }) {
   );
 }
 
+async function UpdateLocation() {
+  try {
+    await BmapController.insertBMapEle();
 
-
-
+    if (!window.BMapGL) {
+      throw new Error("百度地图 SDK 加载完成，但 BMapGL 不存在");
+    }
+    const geoLocation = new window.BMapGL.Geolocation();
+    await new Promise<void>((resolve) => {
+      geoLocation.getCurrentPosition((res: BMapGL.GeolocationResult | null) => {
+        if (res?.point) {
+          BmapController.getAddresByPoint(res.point);
+        }
+        resolve();
+      });
+    });
+  } catch (error) {
+    console.warn("获取地理位置失败", error);
+  }
+}
 
 async function bootstrap() {
   try {
     // 两者互不依赖，并行发起：串行时 App chunk 要等 config.json 多走一个 RTT。
-    const [, { default: App }] = await Promise.all([
+    const [, , { default: App }] = await Promise.all([
       loadRuntimeConfig(),
+      UpdateLocation(),
       import("./App.tsx"),
     ]);
 

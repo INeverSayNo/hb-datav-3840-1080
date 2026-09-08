@@ -33,8 +33,8 @@ import { useNavigate } from "react-router";
 const RightRail = styled.aside`
   position: absolute;
   right: 70px;
-  top: 282px;
-  width: 1420px;
+  top: 260px;
+  width: 2100px;
   height: 1880px;
   z-index: 2;
 `;
@@ -51,12 +51,12 @@ const ServicePanel = styled(Panel)`
 `;
 
 const NodePanel = styled(Panel)`
-  top: 568px;
+  top: 600px;
   height: 710px;
 `;
 
 const RoutePanel = styled(Panel)`
-  top: 1520px;
+  top: 1480px;
   height: 480px;
 `;
 
@@ -124,7 +124,7 @@ const NodeGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 205px;
   top: 120px;
-  gap: 50px 18px;
+  gap: 40px 18px;
 `;
 
 const NodeItemBackground = styled.img`
@@ -227,7 +227,7 @@ const RouteList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0px;
+  gap: 3px;
 `;
 
 const RouteRow = styled.button<{

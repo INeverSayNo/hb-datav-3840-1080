@@ -5,6 +5,7 @@ import type {
   CarriageTypeName,
   ServiceTypeName,
 } from "@/utils/monitorEnum";
+import type { ScreenBaseData } from "@/store/useScreenBaseData";
 
 export interface MonitorSummary {
   wayBill: number;
@@ -48,7 +49,7 @@ export interface MonitorNodeFlow {
   address: string;
   providerName: string;
   remark: string;
-  remark1: string
+  remark1: string;
 }
 
 export interface MonitorRequestEvent {
@@ -69,7 +70,7 @@ export interface MonitorTransportCapacity {
   f2: string;
   f3: string;
   f4: string;
-  id: string
+  id: string;
 }
 
 export interface MonitorExceptionWarning {
@@ -86,7 +87,7 @@ export interface MonitorStopLimitLoading {
   restrictedDepartureStation: string;
   stopEndDate: string;
   stopStartDate: string;
-  station: string
+  station: string;
 }
 
 /** 武汉第二屏（物流大屏）首屏数据。 */
@@ -99,7 +100,7 @@ export interface MonitorTable {
   requestEventList: MonitorRequestEvent[];
   transportCapacityList: MonitorTransportCapacity[];
   exceptionWarningList: MonitorExceptionWarning[];
-  stopLimitLoadingList: MonitorStopLimitLoading[]
+  stopLimitLoadingList: MonitorStopLimitLoading[];
 }
 
 export interface MonitorDataTypeMap {
@@ -111,11 +112,31 @@ export interface MonitorDataTypeMap {
   "wh-transport-capacity": MonitorTransportCapacity;
   "wh-exception-warning": MonitorExceptionWarning;
   "wh-stop-limit-loading": MonitorStopLimitLoading;
-  "wh-secscreen-summary": MonitorSummary
+  "wh-secscreen-summary": MonitorSummary;
 }
 
 export type MonitorDataType = keyof MonitorDataTypeMap;
 export type MonitorEventOperation = "created" | "updated" | "deleted";
+
+export type FirstScreenPanelKey =
+  | "leftTopPanel"
+  | "leftMiddlePanel"
+  | "leftBottomPanel"
+  | "rightTopPanel"
+  | "rightMiddlePanel"
+  | "rightBottomPanel";
+
+export type FirstScreenPanelPatch = Partial<
+  Pick<ScreenBaseData, FirstScreenPanelKey>
+>;
+
+export interface FirstScreenSseEvent {
+  eventId: string;
+  clientId?: string;
+  eventType: "wh-firscreen-summary:update";
+  dataType: "wh-firscreen-summary";
+  data: FirstScreenPanelPatch;
+}
 
 export type MonitorSseEvent = {
   [K in MonitorDataType]: {

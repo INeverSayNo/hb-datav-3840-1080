@@ -55,7 +55,7 @@ const Content = styled.main`
   position: absolute;
   z-index: 2;
   top: 310px;
-  bottom: 220px;
+  bottom: 140px;
   left: 25px;
   right: 25px;
   display: grid;
@@ -271,7 +271,7 @@ const Footer = styled.footer`
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 76px;
+  bottom: 46px;
   color: rgba(40, 105, 130, 0.6);
   font-size: 32px;
   font-weight: 700;
@@ -681,7 +681,7 @@ function MonitorDashboard() {
                 data={nodeFlowList}
                 columns={nodeColumns}
                 visibleRows={11}
-                rowHeight={105}
+                rowHeight={104}
                 startDelay={2400}
               />
             </TableBody>

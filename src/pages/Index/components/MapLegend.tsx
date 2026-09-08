@@ -8,15 +8,14 @@ import NoticeBar from "./NoticeBar";
 
 // 位置与尺寸按 demo.png 图例面板换算到 5600x2320 设计稿坐标
 const Panel = styled.section`
-  width: 2050px;
   padding: 22px 30px 28px;
   box-sizing: border-box;
   border: 2px solid rgba(126, 165, 180, 0.45);
   border-radius: 12px;
   background: rgba(8, 28, 40, 0.78);
   pointer-events: none;
-  display: flex;
-  align-items: center;
+
+  width: 800px;
 `;
 
 const Title = styled.h3`
@@ -29,11 +28,11 @@ const Title = styled.h3`
 `;
 
 const Grid = styled.div`
-  display: flex;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 30px;
   align-items: center;
-  flex-grow: 1;
-  padding-left: 40px;
-  justify-content: space-between;
 `;
 
 const Item = styled.div`
@@ -92,8 +91,8 @@ const LegendPanel = styled.section`
   gap: 28px;
   max-width: 4200px;
   pointer-events: none;
-  left: 160px;
-  top: 1550px;
+  top: 1420px;
+  left: 240px;
   display: flex;
   align-items: center;
   justify-content: center;

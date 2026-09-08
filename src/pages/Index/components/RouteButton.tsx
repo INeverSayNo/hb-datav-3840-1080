@@ -4,7 +4,7 @@ import type { RecommendRoute } from "../recommendLineRoutes";
 
 const Group = styled.div`
   position: absolute;
-  left: 200px;
+  left: 300px;
   top: 210px;
   z-index: 6;
   display: flex;

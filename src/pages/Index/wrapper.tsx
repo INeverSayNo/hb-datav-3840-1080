@@ -39,6 +39,7 @@ import {
   GetScreenBaseData,
   GetXinjiangCoalRoutes,
 } from "@/api/modules/baseDataApi";
+import { useFirstScreenStream } from "@/hooks/useFirstScreenStream";
 
 // 默认使用 three.js 三维地图，可通过 ?map=echarts 回退到 ECharts 版本。
 // 两者都用 lazy 加载：静态导入会把 three.js 和 echarts 一起拖进主 chunk。
@@ -114,11 +115,11 @@ const CenterGlow = styled.div`
 
 const MapStage = styled.div`
   position: absolute;
-  left: 1700px;
+  left: 2200px;
   z-index: 2;
   height: 1670px;
   top: 400px;
-  right: 1660px;
+  right: 2200px;
 `;
 
 const WuhanChannelStage = styled.section`
@@ -289,6 +290,8 @@ function DashboardMap({
 export default function IndexDashboard() {
   const updateStore = useScreenBaseDataStore((s) => s.updateStore);
   const screenLoading = useScreenBaseDataStore((s) => s.loading);
+  const [screenSnapshotReady, setScreenSnapshotReady] = useState(false);
+  useFirstScreenStream(screenSnapshotReady);
   const [currentView, setCurrentView] = useState<DashboardMapView>("province");
   const [incomingView, setIncomingView] = useState<DashboardMapView | null>(
     null,
@@ -326,6 +329,8 @@ export default function IndexDashboard() {
         updateStore(data);
       }
 
+      if (cancelled) return;
+      setScreenSnapshotReady(true);
       fetchXinjiangCoalRoutes();
       updateStore({ loading: false });
     };

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
+import type { FirstScreenPanelPatch } from "@/types/monitor";
 
 export interface ScreenBaseData {
   leftTopPanel: {
@@ -104,42 +105,69 @@ export interface XinJiangCoalRoutes {
 interface ScreenBaseDataStore extends ScreenBaseData {
   loading: boolean; // 请求状态
   updateStore: (payload: Partial<ScreenBaseData>) => void;
+  applyFirstScreenEvent: (
+    eventId: string,
+    payload: FirstScreenPanelPatch,
+  ) => void;
 }
 
 export const useScreenBaseDataStore = create<ScreenBaseDataStore>()(
-  subscribeWithSelector((set) => ({
-    leftTopPanel: {
-      freightVolume: 0,
-      containerCount: 0,
-      lineCount: 0,
-    },
-    leftMiddlePanel: {
-      summary: { sum: 0, yoyRate: 0 },
-      items: [],
-    },
-    leftBottomPanel: [],
-    rightTopPanel: {
-      distributionCount: 0,
-      supplyCount: 0,
-      requestCount: 0,
-      waybillCount: 0,
-      freightVolume: 0,
-      lineCount: 0,
-    },
-    rightMiddlePanel: {
-      parkCount: 0,
-      stationCount: 0,
-      portCount: 0,
-      transportCapacity: 0,
-      privateLine: 0,
-      shipCount: 0,
-      airway: "0",
-      coopPort: "0",
-      rcr: "0",
-    },
-    rightBottomPanel: [],
-    xinjiangCoalRoutes: null,
-    loading: false,
-    updateStore: (payload) => set(payload),
-  })),
+  subscribeWithSelector((set) => {
+    const processedEventIds = new Set<string>();
+
+    return {
+      leftTopPanel: {
+        freightVolume: 0,
+        containerCount: 0,
+        lineCount: 0,
+      },
+      leftMiddlePanel: {
+        summary: { sum: 0, yoyRate: 0 },
+        items: [],
+      },
+      leftBottomPanel: [],
+      rightTopPanel: {
+        distributionCount: 0,
+        supplyCount: 0,
+        requestCount: 0,
+        waybillCount: 0,
+        freightVolume: 0,
+        lineCount: 0,
+      },
+      rightMiddlePanel: {
+        parkCount: 0,
+        stationCount: 0,
+        portCount: 0,
+        transportCapacity: 0,
+        privateLine: 0,
+        shipCount: 0,
+        airway: "0",
+        coopPort: "0",
+        rcr: "0",
+      },
+      rightBottomPanel: [],
+      xinjiangCoalRoutes: null,
+      loading: false,
+      updateStore: (payload) => set(payload),
+      applyFirstScreenEvent: (eventId, payload) => {
+        if (processedEventIds.has(eventId)) return;
+        processedEventIds.add(eventId);
+
+        if (processedEventIds.size > 2000) {
+          const oldest = processedEventIds.values().next().value;
+          if (oldest) processedEventIds.delete(oldest);
+        }
+
+        set((state) => ({
+          
+          leftTopPanel: payload.leftTopPanel ?? state.leftTopPanel,
+          leftMiddlePanel: payload.leftMiddlePanel ?? state.leftMiddlePanel,
+          leftBottomPanel: payload.leftBottomPanel ?? state.leftBottomPanel,
+          rightTopPanel: payload.rightTopPanel ?? state.rightTopPanel,
+          rightMiddlePanel: payload.rightMiddlePanel ?? state.rightMiddlePanel,
+          rightBottomPanel: payload.rightBottomPanel ?? state.rightBottomPanel,
+        }));
+      },
+    };
+  }),
 );
