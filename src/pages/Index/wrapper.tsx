@@ -115,11 +115,11 @@ const CenterGlow = styled.div`
 
 const MapStage = styled.div`
   position: absolute;
-  left: 2200px;
+  left: 2500px;
   z-index: 2;
   height: 1670px;
   top: 400px;
-  right: 2200px;
+  right: 2500px;
 `;
 
 const WuhanChannelStage = styled.section`

@@ -7,12 +7,11 @@ const Wrapper = styled.div`
   position: relative;
   flex: 1;
   min-width: 0;
-  max-width: 2050px;
+  max-width: 1660px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin-top: 100px;
-
+  margin-top: 60px;
   /* 左右渐入渐出遮罩：内容从边缘滑入/滑出时自然淡出，不突兀截断 */
   mask-image: linear-gradient(
     to right,

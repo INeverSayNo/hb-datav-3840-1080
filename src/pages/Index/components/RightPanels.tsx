@@ -34,7 +34,7 @@ const RightRail = styled.aside`
   position: absolute;
   right: 70px;
   top: 260px;
-  width: 2100px;
+  width: 2360px;
   height: 1880px;
   z-index: 2;
 `;
@@ -79,11 +79,11 @@ const ServiceItem = styled.div`
 `;
 
 const ServiceIcon = styled.img`
-  width: 141px;
-  height: 150px;
+  width: 151px;
+  height: 160px;
   flex: 0 0 auto;
   object-fit: contain;
-  margin-right: 14px;
+  margin-right: 26px;
 `;
 
 const MetricContent = styled.div`
@@ -96,7 +96,7 @@ const ServiceValue = styled.div`
   display: flex;
   align-items: baseline;
   gap: 8px;
-  font-size: 56px;
+  font-size: 66px;
   line-height: 58px;
   font-weight: 800;
   white-space: nowrap;
@@ -109,10 +109,10 @@ const ServiceValue = styled.div`
 `;
 
 const ServiceLabel = styled.div`
-  margin-top: 10px;
+  margin-top: 14px;
   color: #c6d6de;
-  font-size: 38px;
-  line-height: 38px;
+  font-size: 48px;
+  line-height: 48px;
   white-space: nowrap;
 `;
 
@@ -132,7 +132,7 @@ const NodeItemBackground = styled.img`
   position: absolute;
   left: -46px;
   width: 266px;
-  height: 146px;
+  height: 178px;
   top: -14px;
   z-index: -1;
 `;
@@ -145,8 +145,8 @@ const NodeItem = styled.div`
 `;
 
 const NodeImage = styled.img`
-  width: 184px;
-  height: 194px;
+  width: 194px;
+  height: 204px;
   flex: 0 0 auto;
   object-fit: contain;
   margin-right: 4px;
@@ -154,8 +154,8 @@ const NodeImage = styled.img`
 
 const NodeValue = styled.div`
   color: #fff;
-  font-size: 56px;
-  line-height: 56px;
+  font-size: 66px;
+  line-height: 66px;
   font-weight: 800;
   white-space: nowrap;
   text-shadow: 0 0 14px rgba(107, 218, 255, 0.42);
@@ -163,10 +163,10 @@ const NodeValue = styled.div`
 
 const NodeLabel = styled.div`
   color: #c4d3dc;
-  font-size: 38px;
-  line-height: 38px;
+  font-size: 48px;
+  line-height: 48px;
   white-space: nowrap;
-  margin-top: 18px;
+  margin-top: 22px;
 `;
 
 const routeLoop = keyframes`
@@ -276,7 +276,7 @@ const RouteContent = styled.span`
   display: flex;
   align-items: center;
   padding-left: 92px;
-  font-size: 36px;
+  font-size: 46px;
   letter-spacing: 1px;
   white-space: nowrap;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);

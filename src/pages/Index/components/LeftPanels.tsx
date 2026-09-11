@@ -32,7 +32,7 @@ const LeftRail = styled.aside`
   position: absolute;
   left: 70px;
   top: 260px;
-  width: 1900px;
+  width: 2200px;
   height: 1880px;
   z-index: 2;
 `;
@@ -54,7 +54,7 @@ const FreightPanel = styled(Panel)`
 `;
 
 const SummaryPanel = styled(Panel)`
-  top: 1410px;
+  top: 1450px;
   height: 540px;
 `;
 
@@ -92,7 +92,7 @@ const OverviewText = styled.div`
 `;
 
 const MetricValue = styled.div`
-  font-size: 54px;
+  font-size: 64px;
   line-height: 62px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -100,16 +100,16 @@ const MetricValue = styled.div`
 `;
 
 const MetricLabel = styled.div`
-  margin-top: 20px;
+  margin-top: 26px;
   color: #c4d5df;
-  font-size: 34px;
+  font-size: 44px;
   line-height: 40px;
   white-space: nowrap;
 `;
 
 const SummaryStats = styled.div`
   position: absolute;
-  top: 100px;
+  top: 120px;
   left: 76px;
   display: grid;
   grid-template-columns: 570px 570px;
@@ -134,14 +134,14 @@ const StatContent = styled.div`
 `;
 
 const StatLabel = styled.div`
-  margin-bottom: 8px;
-  font-size: 36px;
+  margin-bottom:14px;
+  font-size: 46px;
   letter-spacing: 2px;
 `;
 
 const StatValue = styled.strong`
   color: #fff;
-  font-size: 53px;
+  font-size: 63px;
   line-height: 64px;
   letter-spacing: 3px;
   text-shadow: 0 0 15px rgba(113, 218, 255, 0.38);
@@ -195,7 +195,7 @@ const ChartHeaderTitle = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
-  font-size: 38px;
+  font-size: 48px;
   margin-left: 20px;
 `;
 
@@ -204,7 +204,7 @@ const Legend = styled.div`
   align-items: center;
   gap: 18px;
   color: #c7dce5;
-  font-size: 34px;
+  font-size: 44px;
   &::before {
     content: "";
     width: 21px;
@@ -218,7 +218,7 @@ const Legend = styled.div`
 const ChartBox = styled.div`
   position: absolute;
   right: 86px;
-  top: 410px;
+  top: 440px;
   left: 60px;
   height: 400px;
 `;
@@ -282,12 +282,12 @@ const YearCard = styled.div`
 
 const Year = styled.div`
   margin-bottom: 18px;
-  font-size: 42px;
+  font-size: 52px;
   font-weight: 700;
 `;
 
 const YearValue = styled.div`
-  height: 74px;
+  height: 84px;
   margin-top: 18px;
   display: flex;
   align-items: center;
@@ -295,7 +295,7 @@ const YearValue = styled.div`
   border: 2px solid rgba(53, 151, 190, 0.75);
   background: rgba(4, 28, 39, 0.45);
   color: #fff;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 700;
   box-shadow: inset 0 0 12px rgba(47, 181, 233, 0.07);
 
@@ -370,7 +370,7 @@ const FreightChart = memo(function FreightChart({
           axisPointer: { type: "line", lineStyle: { color: "#21e7eb" } },
           backgroundColor: "rgba(3, 31, 42, .94)",
           borderColor: "#21e7eb",
-          textStyle: { color: "#fff", fontSize: 28 },
+          textStyle: { color: "#fff", fontSize: 38 },
         },
         xAxis: {
           type: "category",
@@ -379,7 +379,7 @@ const FreightChart = memo(function FreightChart({
           axisLine: {
             lineStyle: { color: "rgba(82, 146, 164, .28)", width: 2 },
           },
-          axisLabel: { color: "#5e7c86", fontSize: 30, margin: 22 },
+          axisLabel: { color: "#5e7c86", fontSize: 40, margin: 22 },
         },
         yAxis: {
           type: "value",
@@ -388,7 +388,7 @@ const FreightChart = memo(function FreightChart({
           interval: 100000,
           axisTick: { show: true },
           axisLine: { show: true },
-          axisLabel: { color: "#5e7c86", fontSize: 30, margin: 20 },
+          axisLabel: { color: "#5e7c86", fontSize: 40, margin: 20 },
           splitLine: {
             lineStyle: { color: "rgba(42, 111, 125, .18)", width: 2 },
           },
